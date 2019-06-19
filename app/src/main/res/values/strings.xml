@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Player\'s App</string>
+    <string name="password">password</string>
+    <string name="connexion">connexion</string>
+    <string name="mot_de_passe_oublier">Mot_de_passe_oublier</string>
+    <string name="title_activity_display_sport">DisplaySport</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="l_application_des_joueurs">L\'application des joueurs</string>
+    <string name="deconnexion">Deconnexion</string>
+    <string name="entrainement">Entrainement</string>
+    <string name="match">Match</string>
+    <string name="changer_de_compte">Changer de compte</string>
+</resources>
