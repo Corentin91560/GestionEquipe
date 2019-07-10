@@ -25,11 +25,12 @@
                                 <Button layoutX="46.0" layoutY="14.0" mnemonicParsing="false" onAction="#showEquipes" text="Equipes" />
                                 <Button layoutX="44.0" layoutY="88.0" mnemonicParsing="false" onAction="#showTournois" text="Tournois" />
                                 <Button layoutX="37.0" layoutY="161.0" mnemonicParsing="false" onAction="#showStratistiques" text="Statistiques" />
+                                <Button layoutX="51.0" layoutY="125.0" mnemonicParsing="false" onAction="#showMatch" text="Match" />
                             </children>
                         </AnchorPane>
                     </top>
                     <bottom>
-                        <Button mnemonicParsing="false" text="Deconnection" BorderPane.alignment="CENTER">
+                        <Button mnemonicParsing="false" onAction="#Disconnect" text="Deconnection" BorderPane.alignment="CENTER">
                             <BorderPane.margin>
                                 <Insets bottom="10.0" />
                             </BorderPane.margin>

@@ -1,9 +1,15 @@
 package sample.Controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class HomeController {
@@ -71,4 +77,21 @@ public class HomeController {
         }
 
     }
-}
+
+    public void showMatch(ActionEvent actionEvent) {
+
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../ressources/choixchampionnat.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("creation match");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    }
