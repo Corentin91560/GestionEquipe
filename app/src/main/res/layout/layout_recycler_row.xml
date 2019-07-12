@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent_layout">
+
+    <ImageView
+        android:id="@+id/recycler_logo_row"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/playerlogo"
+
+        android:contentDescription="@string/logo_description_rrow_img" />
+    <TextView
+        android:id="@+id/recycler_type_sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/type_de_sport_recycler_row"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/recycler_date_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/text_row_match"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/recycler_lieu_match_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lieu_match_recycler_row"
+        android:textSize="20sp"
+        android:layout_marginTop="55dp"
+
+        />
+</RelativeLayout>
