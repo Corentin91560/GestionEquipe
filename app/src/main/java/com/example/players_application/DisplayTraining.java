@@ -51,10 +51,10 @@ public class DisplayTraining extends AppCompatActivity {
         mTypeSport.add("Foot");
         mDateMatch.add("12/08/2033");
         mLieuMatch.add("Espagne");
-        mTypeSport.add("La chasse a la salope");
+        mTypeSport.add("Un autre sport");
         mDateMatch.add("12/05/2033");
         mLieuMatch.add("Paris");
-        mTypeSport.add("La salope sauvage");
+        mTypeSport.add("Le sport ");
 
 
 
