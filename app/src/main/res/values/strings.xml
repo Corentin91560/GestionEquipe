@@ -12,5 +12,8 @@
     <string name="text_row_match">Date du match</string>
     <string name="type_de_sport_recycler_row">Type de Sport</string>
     <string name="lieu_match_recycler_row">Lieu du match</string>
-    <string name="btn_confirmer_votre_participation">Confirmer Votre Participation</string>
+    <string name="btn_confirmer_votre_participation">Oui</string>
+    <string name="answerNoParticipation">No</string>
+    <string name="static_about_date_event">L\'évenement aura lieu le :</string>
+    <string name="welcoming_text_home">Bienvenue sur l\'application !</string>
 </resources>

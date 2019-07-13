@@ -1,6 +1,7 @@
 package com.example.players_application;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MatchViewHolder> {
 
@@ -45,6 +48,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         matchViewHolder.recycler_lieu_match_row.setText(mLieuMatch.get(i));
         matchViewHolder.recycler_date_row.setText(mDateMatch.get(i));
         matchViewHolder.recycler_type_sport.setText(mTypeSport.get(i));
+
+        matchViewHolder.parent_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, InformationMatch.class);
+                intent.putExtra("date_info", mDateMatch.get(i));
+                intent.putExtra("type_sport", mTypeSport.get(i));
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

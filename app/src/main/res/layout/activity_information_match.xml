@@ -5,23 +5,58 @@
     android:layout_height="match_parent"
     tools:context=".InformationMatch"
     android:orientation="vertical"
-    android:gravity="center">
-    
+    >
+
     <TextView
-        android:id="@+id/informationDateEvent"
+        android:id="@+id/typeSportInformation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginBottom="15sp"
+        android:gravity="center"
+        />
 
+    <TextView
+        android:id="@+id/staticRecap_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/static_about_date_event"
+        android:textSize="25sp"
+        android:layout_marginBottom="15sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/dateEventInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginBottom="15sp"
         />
     <TextView
         android:id="@+id/locationEvent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginBottom="30sp"
+        />
+
     <Button
         android:id="@+id/btnConfirmationParticipation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_confirmer_votre_participation"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/btnNoParticipation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="@string/answerNoParticipation"
+        android:layout_gravity="center"
         />
     
     
