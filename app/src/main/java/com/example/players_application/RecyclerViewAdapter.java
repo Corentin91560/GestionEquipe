@@ -55,6 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Intent intent = new Intent(mContext, InformationMatch.class);
                 intent.putExtra("date_info", mDateMatch.get(i));
                 intent.putExtra("type_sport", mTypeSport.get(i));
+                intent.putExtra("location_event", mLieuMatch.get(i));
                 mContext.startActivity(intent);
             }
         });

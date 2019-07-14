@@ -16,4 +16,6 @@
     <string name="answerNoParticipation">No</string>
     <string name="static_about_date_event">L\'évenement aura lieu le :</string>
     <string name="welcoming_text_home">Bienvenue sur l\'application !</string>
+    <string name="a_l_adresse_suivante">A l\'adresse suivante :</string>
+    <string name="seriez_vous_disponible">Seriez-vous disponible ?</string>
 </resources>
