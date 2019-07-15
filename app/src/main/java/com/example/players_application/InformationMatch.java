@@ -14,20 +14,18 @@ public class InformationMatch extends AppCompatActivity {
     }
 
     private void getIncomingIntent(){
-        if(getIntent().hasExtra("date_info") && getIntent().hasExtra("type_sport") && getIntent().hasExtra("location_event")){
+        if(getIntent().hasExtra("date_info") && getIntent().hasExtra("type_sport")){
             String date = getIntent().getStringExtra("date_info");
             String sport = getIntent().getStringExtra("type_sport");
-            String location = getIntent().getStringExtra("location_event");
-            setInfo(date, sport, location);
+            setInfo(date, sport);
         }
     }
-    private void setInfo(String date, String sport, String location){
+    private void setInfo(String date, String sport){
 
-        TextView locationEvent = findViewById(R.id.locationEvent);
+        TextView location = findViewById(R.id.locationEvent);
         TextView dateEvent = findViewById(R.id.dateEventInformation);
         TextView type = findViewById(R.id.typeSportInformation);
         dateEvent.setText(date);
         type.setText(sport);
-        locationEvent.setText(location);
     }
 }
