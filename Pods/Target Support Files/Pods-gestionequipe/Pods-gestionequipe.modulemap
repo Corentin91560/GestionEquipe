@@ -1,0 +1,6 @@
+framework module Pods_gestionequipe {
+  umbrella header "Pods-gestionequipe-umbrella.h"
+
+  export *
+  module * { export * }
+}

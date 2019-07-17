@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad11_0rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="gestionequipe" customModuleProvider="target">
+            <connections>
+                <outlet property="connecterBTN" destination="oyK-dk-5GW" id="rfj-LO-Q64"/>
+                <outlet property="emailTF" destination="CAu-03-CX8" id="XIY-YY-KSh"/>
+                <outlet property="passwordTF" destination="LAk-qe-X3b" id="gC7-N5-RGX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAu-03-CX8">
+                    <rect key="frame" x="242" y="435" width="350" height="40"/>
+                    <color key="backgroundColor" white="0.79684824489999995" alpha="0.29647367289999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="V3i-fj-6ej"/>
+                        <constraint firstAttribute="width" constant="350" id="Yhd-90-BaC"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LAk-qe-X3b">
+                    <rect key="frame" x="242" y="515" width="350" height="40"/>
+                    <color key="backgroundColor" white="0.79971104449999997" alpha="0.29647367289999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="350" id="DlC-kr-0tp"/>
+                        <constraint firstAttribute="height" constant="40" id="lFG-Vh-x8J"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyK-dk-5GW">
+                    <rect key="frame" x="357" y="615" width="120" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="9cw-yP-zwS"/>
+                        <constraint firstAttribute="height" constant="50" id="eey-KP-NgL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Connecter">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="connecter:" destination="-1" eventType="touchUpInside" id="ylV-Eb-VaA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connexion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ub-gf-Vfg">
+                    <rect key="frame" x="334.5" y="324" width="165.5" height="41"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5Ub-gf-Vfg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="300" id="0VW-WP-GtB"/>
+                <constraint firstItem="oyK-dk-5GW" firstAttribute="top" secondItem="LAk-qe-X3b" secondAttribute="bottom" constant="60" id="1L3-5t-mRO"/>
+                <constraint firstItem="LAk-qe-X3b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5kd-20-SJk"/>
+                <constraint firstItem="CAu-03-CX8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bgT-6N-vLM"/>
+                <constraint firstItem="CAu-03-CX8" firstAttribute="top" secondItem="5Ub-gf-Vfg" secondAttribute="bottom" constant="70" id="bvv-Pk-8FG"/>
+                <constraint firstItem="5Ub-gf-Vfg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mhW-Be-sfk"/>
+                <constraint firstItem="oyK-dk-5GW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="r1d-Aq-Mhr"/>
+                <constraint firstItem="LAk-qe-X3b" firstAttribute="top" secondItem="CAu-03-CX8" secondAttribute="bottom" constant="40" id="sCc-DB-bZY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
