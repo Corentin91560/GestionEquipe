@@ -14,6 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.Class.Championnat;
+import sample.Data.ApiCaller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,23 +30,29 @@ public class ListeChampionnatController {
     private ListView<String> lvdepreg;
     @FXML
     private ListView<String> lvchmp;
-    @FXML
-    private ListView<String> lvjoueur;
+    public int idchampionnat;
+
+    public int getIdchampionnat() {
+        return idchampionnat;
+    }
+
+    public void setIdchampionnat(int idchampionnat) {
+        this.idchampionnat = idchampionnat;
+    }
 
     private ObservableList<String> observableListcategorie = FXCollections.observableArrayList();
     private ObservableList<String> observableListdepreg = FXCollections.observableArrayList();
     private ObservableList<String> observableListchmp = FXCollections.observableArrayList();
-    private ObservableList<String> observableListjoueur = FXCollections.observableArrayList();
 
 
     public void initialize(){
         List<Championnat> championnat = new ArrayList<Championnat>();
-        championnat.add(new Championnat("national",1));
-        championnat.add(new Championnat("regionnal",2));
-        championnat.add(new Championnat("departemantal",3));
+        championnat.add(new Championnat("national",""));
+        championnat.add(new Championnat("regionnal",""));
+        championnat.add(new Championnat("departemantal",""));
         int i=0;
         while(i<championnat.size()){
-            observableListcategorie.add(championnat.get(i).getDivision());
+            observableListcategorie.add(championnat.get(i).getNiveau());
             i=i+1;
         }
 
@@ -77,74 +84,120 @@ public class ListeChampionnatController {
         lvchmp.getItems().clear();
         lvdepreg.getItems().clear();
 
-        loadchmp("national");
+        ApiCaller caller = ApiCaller.getInstance();
+        ArrayList<Championnat> championnat = new ArrayList<Championnat>();
+        if (caller.depregsearch("national",championnat)==200){
+            int i=0;
+            while(i<championnat.size()){
+                observableListdepreg.add(championnat.get(i).getNomdepreg());
+                System.out.println(championnat.get(i).getNomdepreg());
+                i=i+1;
+            }
+            lvdepreg.setItems(observableListdepreg);
 
+            lvdepreg.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println("clicked on " + lvdepreg.getSelectionModel().getSelectedItem());
+                    loadchmp(lvdepreg.getSelectionModel().getSelectedItem());
+                }
+            });
+        }
 
     }
 
     public void loaddep(){
+        lvchmp.getItems().clear();
         lvdepreg.getItems().clear();
-        List<Championnat> championnat = new ArrayList<Championnat>();
-        championnat.add(new Championnat("91",1));
-        championnat.add(new Championnat("95",2));
-        championnat.add(new Championnat("16",3));
-        int i=0;
-        while(i<championnat.size()){
-            observableListdepreg.add(championnat.get(i).getDivision());
-            i=i+1;
+        ApiCaller caller = ApiCaller.getInstance();
+        ArrayList<Championnat> championnat = new ArrayList<Championnat>();
+        if (caller.depregsearch("departemental",championnat)==200){
+            int i=0;
+            while(i<championnat.size()){
+                observableListdepreg.add(championnat.get(i).getNomdepreg());
+                System.out.println(championnat.get(i).getNomdepreg());
+                i=i+1;
+            }
+            lvdepreg.setItems(observableListdepreg);
+
+            lvdepreg.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println("clicked on " + lvdepreg.getSelectionModel().getSelectedItem());
+                    loadchmp(lvdepreg.getSelectionModel().getSelectedItem());
+                }
+            });
         }
 
-        lvdepreg.setItems(observableListdepreg);
-
-        lvdepreg.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("clicked on " + lvdepreg.getSelectionModel().getSelectedItem());
-                loadchmp(lvcategorie.getSelectionModel().getSelectedItem());
-            }
-        });
     }
 
-    private void loadchmp(String selectedItem) {
+    public void loadchmp(String selectedItem) {
 
-        //requete recup championnat
-        //select namechampionnat where categorie = selecteditem;
+
+        lvchmp.getItems().clear();
+        ApiCaller caller = ApiCaller.getInstance();
+        ArrayList<Championnat> championnat1 = new ArrayList<Championnat>();
+        if (caller.championnatsearch(selectedItem,championnat1)==200){
+            int i=0;
+            while(i<championnat1.size()){
+                observableListchmp.add(championnat1.get(i).getIdchampionnat()+" "+championnat1.get(i).getNomdepreg());
+                System.out.println(championnat1.get(i).getDivision());
+                i=i+1;
+            }
+            lvchmp.setItems(observableListchmp);
+
+
+            lvchmp.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println("clicked on " + lvchmp.getSelectionModel().getSelectedItem().replaceAll("[^0-9]+",""));
+                    setIdchampionnat(Integer.parseInt(lvchmp.getSelectionModel().getSelectedItem().replaceAll("[^0-9]+","")));
+
+                    Parent root;
+                    try {
+                        root = FXMLLoader.load(getClass().getResource("../ressources/championnat.fxml"));
+                        Stage stage = new Stage();
+                        stage.setTitle("championnat");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                    }
+                    catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+
 
     }
 
     public void loadreg(){
+        lvchmp.getItems().clear();
         lvdepreg.getItems().clear();
-        List<Championnat> championnat = new ArrayList<Championnat>();
-        championnat.add(new Championnat("idf",1));
-        championnat.add(new Championnat("paca",2));
-        championnat.add(new Championnat("nord",3));
-        int i=0;
-        while(i<championnat.size()){
-            observableListdepreg.add(championnat.get(i).getDivision());
-            i=i+1;
-        }
 
-        lvdepreg.setItems(observableListdepreg);
-
-        lvdepreg.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("clicked on " + lvdepreg.getSelectionModel().getSelectedItem());
-                switch (lvcategorie.getSelectionModel().getSelectedItem()){
-                    case "idf":
-                        loadnat();
-                        break;
-                    case "paca":
-                        loadreg();
-                        break;
-                    case "nord":
-                        loaddep();
-                        break;
-                }
+        ApiCaller caller = ApiCaller.getInstance();
+        ArrayList<Championnat> championnat = new ArrayList<Championnat>();
+        if (caller.depregsearch("regional",championnat)==200){
+            int i=0;
+            while(i<championnat.size()){
+                observableListdepreg.add(championnat.get(i).getNomdepreg());
+                System.out.println(championnat.get(i).getNomdepreg());
+                i=i+1;
             }
-        });
+            lvdepreg.setItems(observableListdepreg);
+
+            lvdepreg.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println("clicked on " + lvdepreg.getSelectionModel().getSelectedItem());
+                    loadchmp(lvdepreg.getSelectionModel().getSelectedItem());
+                }
+            });
+        }
     }
 
 

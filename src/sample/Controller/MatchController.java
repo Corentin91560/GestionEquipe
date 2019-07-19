@@ -3,6 +3,7 @@ package sample.Controller;
 import javafx.event.ActionEvent;
 
 public class MatchController {
+ListeChampionnatController controller = new ListeChampionnatController();
 
     public void validerchampionnat(ActionEvent actionEvent) {
         try {

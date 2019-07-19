@@ -2,32 +2,49 @@ package sample.Class;
 
 public class Equipe {
 
-    Club club;
-    String nomEquipe;
-    Championnat championnat;
+    int idequipe;
+    String nomequipe;
+    int idclub;
+    int idchampionnat;
 
-    public Club getClub() {
-        return club;
+    public Equipe(String nomequipe) {
+        this.nomequipe = nomequipe;
     }
 
-    public void setClub(Club club) {
-        this.club = club;
+    public Equipe(int idequipe, String nomequipe) {
+        this.idequipe = idequipe;
+        this.nomequipe = nomequipe;
     }
 
-    public String getNomEquipe() {
-        return nomEquipe;
+    public int getIdequipe() {
+        return idequipe;
     }
 
-    public void setNomEquipe(String nomEquipe) {
-        this.nomEquipe = nomEquipe;
+    public void setIdequipe(int idequipe) {
+        this.idequipe = idequipe;
     }
 
-    public Championnat getChampionnat() {
-        return championnat;
+    public String getNomequipe() {
+        return nomequipe;
     }
 
-    public void setChampionnat(Championnat championnat) {
-        this.championnat = championnat;
+    public void setNomequipe(String nomequipe) {
+        this.nomequipe = nomequipe;
     }
 
+    public int getIdclub() {
+        return idclub;
+    }
+
+    public void setIdclub(int idclub) {
+        this.idclub = idclub;
+    }
+
+    public int getIdchampionnat() {
+        return idchampionnat;
+    }
+
+    public void setIdchampionnat(int idchampionnat) {
+        this.idchampionnat = idchampionnat;
+    }
 }

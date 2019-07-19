@@ -15,7 +15,7 @@ public class ChangeSceneController {
             System.out.println(getClass().getResource(fxmlfile));
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlfile));
             Parent root = (Parent) fxmlLoader.load();
-            //<editor-fold desc="change scene from stage">
+            //<editor-fold desc="change scene from current stage">
             Node source = (Node) actionEvent.getSource();
             Window theStage = source.getScene().getWindow();
             Stage currentStage = (Stage)theStage.getScene().getWindow();
